@@ -29,7 +29,7 @@ build-desktop:
 
 run-desktop:
 	@echo "Starting the container"
-	@docker run --rm -it --net=host --env="DISPLAY" -v="/run/user/1000/gdm/Xauthority:/root/.Xauthority:rw" -v /home/mugdha/docker-images/webtorrent/Downloads:/home/webtorrent/downloads --name webtorrent-desk-env mugdhaadhav/webtorrent-desktop:1.0
+	@docker run --rm -it --net=host --env="DISPLAY" --device /dev/snd -v="/run/user/1000/gdm/Xauthority:/root/.Xauthority:rw" -v /home/mugdha/docker-images/webtorrent/Downloads:/home/webtorrent/downloads --name webtorrent-desk-env mugdhaadhav/webtorrent-desktop:1.0
 
 build-test:
 	@echo "Creating a WebTorrent browser docker image"
